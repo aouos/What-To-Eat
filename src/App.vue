@@ -22,9 +22,17 @@ export default {
 </script>
 
 <style>
+html,body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  outline: none;
+  height: 100%;
+}
+
 #app {
-  widows: 100%;
   text-align: center;
+  height: 100%;
 }
 
 .tabbar {
