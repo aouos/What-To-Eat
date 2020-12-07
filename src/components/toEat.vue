@@ -5,7 +5,6 @@
       <div class="history">历史</div>
     </div>
     <div class="show_foods">
-      <p>展示区域</p>
     </div>
     <button>开始</button>
   </div>
@@ -42,12 +41,12 @@ export default {
 
 button {
   position: absolute;
-  bottom: 5em;
+  bottom: 5.6em;
   left: 50%;
   transform: translate(-50%);
   margin-top: 2em;
-  padding: 1em 2.4em;
-  background-color: orange;
+  padding: .8em 2.4em;
+  background-color: #FDC90B;
   color: #fff;
   border-radius: 3em;
   border: 0;
