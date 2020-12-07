@@ -3,13 +3,19 @@
     <router-view></router-view>
     <div class="tabbar">
       <div>
-        <router-link :to="{ name: 'eat' }">首页</router-link>
+        <router-link :to="{ name: 'eat' }" replace>
+          <span>首页</span>
+        </router-link>
       </div>
       <div>
-        <router-link :to="{ name: 'list' }">列表</router-link>
+        <router-link :to="{ name: 'list' }" replace>
+          <span>列表</span>
+        </router-link>
       </div>
       <div>
-        <router-link :to="{ name: 'about' }">我的</router-link>
+        <router-link :to="{ name: 'about' }" replace>
+          <span>我的</span>
+        </router-link>
       </div>
     </div>
   </div>
@@ -27,12 +33,11 @@ html,body {
   border: 0;
   margin: 0;
   outline: none;
-  height: 100%;
+  background-color: #fff;
 }
 
 #app {
   text-align: center;
-  height: 100%;
 }
 
 .tabbar {
@@ -45,13 +50,16 @@ html,body {
   z-index: 10;
   border-top: 1px solid #eee;
   background-color: #fff;
-  color: #333;
-  font-size: .8em;
-  line-height: 4;
+  font-size: 1em;
+  line-height: 3;
 }
 
 a {
   color: #333;
   text-decoration: none;
+}
+
+.active {
+  color: #FDC90B;
 }
 </style>

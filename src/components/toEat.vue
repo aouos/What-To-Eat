@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="history">历史</div>
     <div class="switch_tags">
-      <span>午餐列表 ▼</span>
+      <span>午餐列表</span>
+      <div class="history">历史</div>
     </div>
     <div class="show_foods">
       <p>展示区域</p>
@@ -18,31 +18,25 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.history {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 4em;
-  height: 4em;
-  line-height: 4em;
-}
-
 .switch_tags {
+  display: flex;
+  justify-content: space-between;
   padding: 1em;
   font-size: 1.2em;
   font-weight: bold;
 }
 
+.history {
+  font-size: .8em;
+  font-weight: normal;
+}
+
 .show_foods {
-  width: 100%;
-  flex: 1;
-  padding-top: 7em;
+  position: fixed;
+  top: 4em;
+  bottom: 4em;
+  left: 0;
+  right: 0;
   background-color: #fff;
 }
 

@@ -7,8 +7,14 @@ import about from './components/aboutMe'
 
 Vue.use(VueRouter);
 
-export default new VueRouter({
+const router = new VueRouter({
+  mode: 'hash', // 使用hash模式
+  linkExactActiveClass: 'active', // 选中class
   routes: [
+    {
+      path: "/",
+      redirect: "/eat"
+    },
     {
       path: "/eat",
       name: "eat",
@@ -23,10 +29,8 @@ export default new VueRouter({
       path: "/about",
       name: "about",
       component: about
-    },
-    {
-      path: '/',
-      redrrect: '/eat'
     }
   ]
 })
+
+export default router

@@ -6,7 +6,7 @@
     <div class="list_box">
       <div v-for="(val, index) in items" :key="index" class="item_card">
         <span>{{ val }}</span>
-        <span>删除</span>
+        <span @click="delItem(index)">删除</span>
       </div>
       <div class="add">
         <button>+</button>
@@ -23,6 +23,11 @@ export default {
       tags: ["午餐列表", "晚饭"],
       items: ["魏家凉皮", "油泼面", "山西刀削面", "高小松", "张亮麻辣烫","魏家凉皮", "油泼面", "山西刀削面", "高小松", "张亮麻辣烫"],
     };
+  },
+  methods: {
+    delItem(idx) {
+      this.items.splice(idx, 1);
+    }
   },
 };
 </script>
