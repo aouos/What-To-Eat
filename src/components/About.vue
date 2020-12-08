@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "aboutMe",
+  name: "About",
   methods: {
     popClass() {
       alert("哇咔咔");
