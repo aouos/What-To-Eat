@@ -1,14 +1,14 @@
 <template>
-  <div class="food_list">
-    <div class="tags">
+  <div class="list">
+    <div class="food_tags">
       <span v-for="item in tags" :key="item">{{ item }}</span>
     </div>
     <div class="list_box">
-      <div v-for="(val, index) in items" :key="index" class="item_card">
+      <div v-for="(val, index) in items" :key="val" class="item_card">
         <span>{{ val }}</span>
-        <span @click="delItem(index)" class="item_delete"></span>
+        <span @click="delItem(index)" class="del_item"></span>
       </div>
-      <div class="add">
+      <div class="add_item">
         <input
           type="text"
           v-model="addFood"
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { store } from "../store"
+import { store } from "../store";
 
 export default {
   name: "List",
@@ -30,7 +30,7 @@ export default {
     return {
       addFood: "",
       tags: ["午餐列表"],
-      items: store.items
+      items: store.items,
     };
   },
   methods: {
@@ -48,25 +48,26 @@ export default {
 </script>
 
 <style scoped>
-.food_list {
-  height: 100%;
+.list {
+  height: inherit;
   padding: 0 1em;
 }
 
-.tags {
+.food_tags {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
   font-size: 1.2rem;
-  background-color: #fff;
-  padding: 1em;
   font-weight: bold;
+  background-color: var(--main-background, #fff);
+  padding: 1em;
+  color: var(--main-color, #333);
   text-align: left;
 }
 
-.tags span {
+.food_tags span {
   margin-right: 0.8em;
 }
 
@@ -75,19 +76,20 @@ export default {
 }
 
 .item_card,
-.add {
+.add_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: var(--main-background, #fff);
   padding: 1em;
   margin: 1.2em 0;
   border-radius: 0.5em;
-  box-shadow: 2px 2px 8px #eee;
+  color: var(--main-color, #333);
+  box-shadow: 2px 2px 8px var(--main-border, #eee);
 }
 
-.item_delete {
+.del_item {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -95,20 +97,20 @@ export default {
   background-size: contain;
 }
 
-.add input {
+.add_item input {
   flex: 1;
+  font-size: 1rem;
   margin-right: 1.5em;
   border: 1px solid #fff;
-  background-color: #fff;
-  outline: none;
+  border: 0;
+  background-color: var(--main-background, #fff);
   box-shadow: none;
 }
 
-.add span {
+.add_item span {
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
-  border: 0;
   background: url("../assets/add.png") no-repeat center center;
   background-size: contain;
 }
